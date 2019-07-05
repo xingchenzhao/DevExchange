@@ -166,4 +166,148 @@ router.delete('/', auth, async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+
+//@route    PUT api/profile/experience
+//@desc     ADd profile experience
+//@access   Private
+
+router.put(
+  '/experience',
+  [
+    auth,
+    [
+      check('title', 'Title is required')
+        .not()
+        .isEmpty(),
+      check('company', 'Company is required')
+        .not()
+        .isEmpty(),
+      check('from', 'From date is required')
+        .not()
+        .isEmpty()
+    ]
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const {
+      title,
+      company,
+      location,
+      from,
+      to,
+      current,
+      description
+    } = req.body;
+
+    const newExp = {
+      title,
+      company,
+      location,
+      from,
+      to,
+      current,
+      description
+    };
+
+    try {
+      const profile = await Profile.findOne({ user: req.user.id });
+
+      profile.experience.unshift(newExp); //push to the beginning
+
+      await profile.save();
+
+      res.json(profile);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+  }
+);
+
+//@route PUT api/profile/experience/:exp_id
+//@desc Edit profile experience
+//@access Private
+router.put(
+  '/experience/:exp_id',
+  [
+    auth,
+    check('title', 'Title is required')
+      .not()
+      .isEmpty(),
+    check('company', 'Company is required')
+      .not()
+      .isEmpty(),
+    check('from', 'From date is required')
+      .not()
+      .isEmpty()
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const {
+      title,
+      company,
+      location,
+      from,
+      to,
+      current,
+      description
+    } = req.body;
+    // since title, company, from are required
+    const exp = { title, company, from };
+    if (location) exp.location = location;
+    if (to) exp.to = to;
+    if (current) exp.current = current;
+    if (description) exp.description = description;
+
+    try {
+      const profile = await Profile.findOneAndUpdate(
+        // note that I wrote 'userid' instead of 'user'
+        { userid: req.user.id, 'experience._id': req.params.exp_id },
+        {
+          $set: {
+            // I don't want my experience id to change
+            'experience.$': { _id: req.params.exp_id, ...exp }
+          }
+        },
+        { new: true }
+      );
+      res.json(profile);
+    } catch (err) {
+      console.log(err.message);
+      res.status(500).send('Server Error');
+    }
+  }
+);
+
+//@route DELETE api/profile/experience/:exp_id
+//@desc Delete experience from profile
+//@access Private
+router.delete('/experience/:exp_id', auth, async (req, res) => {
+  try {
+    const profile = await Profile.findOne({ user: req.user.id });
+
+    //Get remove index
+    const removeIndex = profile.experience
+      .map(item => item.id)
+      .indexOf(req.params.exp_id);
+
+    profile.experience.splice(removeIndex, 1);
+
+    await profile.save();
+
+    res.json(profile);
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
 module.exports = router;
