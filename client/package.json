@@ -12,9 +12,12 @@
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-scroll-into-view-if-needed": "^2.1.7",
+    "react-spring": "^8.0.27",
     "redux": "^4.0.2",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
+    "scroll-into-view-if-needed": "^2.2.20",
     "uuid": "^3.3.2"
   },
   "scripts": {
