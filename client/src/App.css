@@ -13,17 +13,6 @@
   padding: 0;
 }
 
-.rightLowerText {
-  position: relative;
-}
-
-.lowerText {
-  position: absolute;
-  bottom: 10px;
-  right: 20px;
-  color: #fff;
-}
-
 body {
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
@@ -586,4 +575,15 @@ button {
   .post button {
     padding: 0.3rem 0.4rem;
   }
+}
+
+.rightLowerText {
+  position: relative;
+}
+
+.lowerText {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  color: #fff;
 }

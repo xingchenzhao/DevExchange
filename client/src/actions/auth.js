@@ -11,6 +11,7 @@ import {
   CLEAR_PROFILE
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
+import { Alert } from 'rsuite';
 
 //Load User
 
