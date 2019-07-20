@@ -17,8 +17,22 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(174, 234, 255, 1) 35%,
+    rgba(171, 187, 255, 1) 100%
+  );
   color: #333;
+}
+
+.particle-canvas {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  z-index: -1;
 }
 
 a {
@@ -137,6 +151,7 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  border-radius: 0.4rem;
 }
 
 .badge {
@@ -359,6 +374,8 @@ button {
   padding: 1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
+  opacity: 0.75;
+  border-radius: 0.5rem;
 }
 
 /* Profile Page */
@@ -379,6 +396,8 @@ button {
   align-items: center;
   justify-content: center;
   text-align: center;
+  opacity: 0.75;
+  border-radius: 0.6rem;
 }
 
 .profile-top img {
@@ -397,6 +416,8 @@ button {
 .profile-about {
   grid-area: about;
   text-align: center;
+  opacity: 0.7;
+  border-radius: 0.6rem;
 }
 
 .profile-about .skills {
@@ -408,10 +429,14 @@ button {
 
 .profile-exp {
   grid-area: exp;
+  opacity: 0.7;
+  border-radius: 0.6rem;
 }
 
 .profile-edu {
   grid-area: edu;
+  opacity: 0.7;
+  border-radius: 0.6rem;
 }
 
 .profile-exp h2,
@@ -442,6 +467,8 @@ button {
 
 .profile-github .repo {
   display: flex;
+  opacity: 0.75;
+  border-radius: 0.5rem;
 }
 
 .profile-github .repo > div:first-child {

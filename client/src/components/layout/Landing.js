@@ -27,7 +27,7 @@ const Landing = ({ isAuthenticated }) => {
           </div>
         </div>
         <div className='rightLowerText'>
-          <p className='lowerText'>Developed by Xingchen</p>
+          <p className='lowerText'>MERN Stack Website Developed by Xingchen</p>
         </div>
       </div>
     </section>
