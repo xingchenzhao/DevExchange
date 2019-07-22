@@ -33,6 +33,7 @@ body {
   width: 100%;
   height: 80%;
   z-index: -1;
+  position: fixed;
 }
 
 a {
@@ -492,6 +493,8 @@ button {
   grid-template-columns: 1fr 4fr;
   grid-gap: 2rem;
   align-items: center;
+  opacity: 0.8;
+  border-radius: 0.5rem;
 }
 
 .post > div:first-child {
