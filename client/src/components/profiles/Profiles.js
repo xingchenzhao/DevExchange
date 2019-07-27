@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import ProfileItem from './ProfileItem';
-
+import { SearchInput } from 'evergreen-ui';
 import { getProfiles } from '../../actions/profile';
 
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
@@ -18,6 +18,12 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
       ) : (
         <Fragment>
           <h1 className='large text-primary'>Developers</h1>
+          <SearchInput
+            className='searchInput'
+            placeholder='The search function is coming soon.'
+            marginBottom={20}
+          />
+
           <p className='lead'>
             <i className='fab fa-connectdevelop' /> Browse and connect with
             developers

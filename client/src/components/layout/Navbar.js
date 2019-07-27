@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
+import rubber_duck from '../../img/rubber_duck.png';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
@@ -46,6 +47,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <h1>
         <Link to='/'>
           <i className='fas fa-code' /> DevExchange
+          <img className='rubber-duck' src={rubber_duck} alt='' />
         </Link>
       </h1>
       {!loading && (

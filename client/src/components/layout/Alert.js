@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Transition, animated } from 'react-spring/renderprops';
-
+import { Alert as Alert_evergreen } from 'evergreen-ui';
 const Alert = ({ alerts }) =>
   alerts !== null &&
   alerts.length > 0 &&
@@ -19,8 +19,12 @@ const Alert = ({ alerts }) =>
         show &&
         (props => (
           <animated.div style={props}>
-            <div key={alert.id} className={`alert alert-${alert.alertType}`}>
-              {alert.msg}
+            <div key={alert.id} className={`alert`}>
+              <Alert_evergreen
+                title={alert.msg}
+                intent={alert.alertType}
+                marginBotton={32}
+              />
             </div>
           </animated.div>
         ))

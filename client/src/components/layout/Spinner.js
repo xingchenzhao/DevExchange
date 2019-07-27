@@ -1,12 +1,16 @@
 import React, { Fragment } from 'react';
-import spinner from './spinner.gif';
+// import spinner from './spinner.gif';
+import { Spinner, Pane } from 'evergreen-ui';
 
 export default () => (
   <Fragment>
-    <img
-      src={spinner}
-      style={{ width: '200px', margin: 'auto', display: 'block' }}
-      alt='Loading...'
-    />
+    <Pane
+      display='flex'
+      alignItems='center'
+      justifyContent='center'
+      height={400}
+    >
+      <Spinner size={100} />
+    </Pane>
   </Fragment>
 );

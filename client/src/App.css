@@ -1,8 +1,8 @@
 /* Global Styles */
 :root {
-  --primary-color: #17a2b8;
+  --primary-color: #3bc8de;
   --dark-color: #343a40;
-  --light-color: #f4f4f4;
+  --light-color: #f9f9fb;
   --danger-color: #dc3545;
   --success-color: #28a745;
 }
@@ -245,6 +245,12 @@ img {
   border-radius: 50%;
 }
 
+.rubber-duck {
+  margin-left: 0.5rem;
+  height: 18px;
+  width: 18px;
+}
+
 .line {
   height: 1px;
   background: #ccc;
@@ -279,7 +285,7 @@ img {
 .form select,
 .form textarea {
   display: block;
-  width: 80%;
+  width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
@@ -320,6 +326,8 @@ button {
 .table td {
   padding: 1rem;
   text-align: left;
+  opacity: 0.85;
+  border-radius: 0.3rem;
 }
 
 .table th {
@@ -380,7 +388,7 @@ button {
 /* Profiles Page */
 .profile {
   display: grid;
-  grid-template-columns: 2fr 4fr 2fr;
+  grid-template-columns: 1.5fr 4fr 1.5fr;
   align-items: center;
   grid-gap: 2rem;
   padding: 1rem;
