@@ -16,6 +16,7 @@ import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
 import PrivateRoute from './components/routing/PrivateRoute';
 import Particles from 'react-particles-js';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 //Redux
 import { Provider } from 'react-redux';
@@ -23,6 +24,7 @@ import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 import './App.css';
+import { render } from 'react-dom';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
