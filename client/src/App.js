@@ -15,6 +15,8 @@ import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
 import PrivateRoute from './components/routing/PrivateRoute';
+import NotFound from './components/layout/NotFound';
+
 import Particles from 'react-particles-js';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -102,6 +104,7 @@ const App = () => {
                 />
                 <PrivateRoute exact path='/posts' component={Posts} />
                 <PrivateRoute exact path='/posts/:id' component={Post} />
+                <Route component={NotFound} />
               </section>
             </Switch>
           </Fragment>
