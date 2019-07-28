@@ -18,8 +18,8 @@ This is an in depth full stack(MERN Stack) social network application(DevExchang
 ## Quick Start
 
 ```
-  #change default.json file (config/default.json)
-  #add uri of your own mongodb connection. For example "mongoURI": " mongodb://localhost/dev-exchange"
+#change default.json file (config/default.json)
+#add uri of your own mongodb connection. For example "mongoURI": " mongodb://localhost/dev-exchange"
 ```
 
 ```bash
