@@ -21,7 +21,7 @@
     "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
     "mem": ">=4.0.0",
-    "mongoose": "^5.6.2",
+    "mongoose": "^5.7.5",
     "react-particles-js": "^2.6.0",
     "react-spring": "^8.0.27",
     "react-transition-group": "^4.2.1",
